@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+      input, button {
+        padding: 10px;
+        margin: 5px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px black;
+      }
+      button {
+        background-color: rgb(0, 229, 255);
+        border: none;
+        color: white;
+      }
+      .task {
+        margin: 5px 0;
+      }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="input" placeholder="Enter a task">
+    <button id="add">Add</button>
+    <div id="tasklist"></div>
+    <script>
+      document.getElementById("add").onclick = function() {
+        const input = document.getElementById("input");
+        if (input.value.trim() === "") {
+          alert("Please enter a task!");
+        } else {
+          const task = document.createElement("div");
+          task.classList.add("task");
+          task.innerHTML = `${input.value} <button onclick="this.parentElement.remove()">Delete</button>`;
+          document.getElementById("tasklist").appendChild(task);
+          input.value = "";
+        }
+      };
+    </script>
+</body>
+</html>
