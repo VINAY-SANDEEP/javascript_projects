@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down Timer</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <p id="countdown"></p>
+    <script>
+      const start = 10;
+      let time = start*60;
+      const countdown = document.getElementById("countdown");
+       setInterval(update,1000);
+      function update() {
+    const min = Math.floor(time/60);
+        let sec = time %60;
+   countdown.innerHTML =`${min} : ${sec}`
+   time--;
+   } 
+    </script>
+</body>
+</html>
