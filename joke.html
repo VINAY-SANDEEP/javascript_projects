@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke generator</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: orange;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .wrapper {
+        width: 80vmin;
+        padding: 50px 40px;
+        background-color: black;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        box-shadow: 20px 20px 40px rgb(33, 25, 25);
+    }
+
+    span {
+        display: block;
+        text-align: center;
+        font-size: 100px;
+        background-color: black;
+    }
+
+    p {
+        font-size: 16px;
+        color: white;
+        background-color: black;
+        text-align: center;
+        word-wrap: break-word;
+        line-height: 35px;
+        margin: 30px 0;
+    }
+
+    button {
+        display: block;
+        background-color: yellow;
+        border: none;
+        padding: 5px;
+        font-size: 18px;
+        color: black;
+        font-weight: 600;
+        padding: 12px 25px;
+        margin: 0 auto;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <span>&#128514;</span>
+        <p id="joke">Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+        <button id="btn">Change</button>
+    </div>
+    <script>
+        const joke = document.getElementById("joke");
+        const btn = document.getElementById("btn");
+        const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+
+        let getjoke = () => {
+            fetch(url)
+                .then(data => data.json())
+                .then(item => {
+                    joke.innerHTML = `${item.joke}`;
+                })
+                .catch(error => console.error('Error fetching the joke:', error));
+        }
+
+        btn.addEventListener("click", getjoke);
+    </script>
+</body>
+
+</html>
