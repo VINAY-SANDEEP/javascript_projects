@@ -13,12 +13,12 @@ This repository contains several beginner-level JavaScript projects designed to 
 
 ## Projects
 
-1. **To-Do List**: A simple app that allows users to add, remove, and mark tasks as completed.
-2. **Weather Report**: Displays the weather report of a specified location using an API.
-3. **Pokemon Generator**: Generates random Pokemon information using the Pokemon API.
-4. **Countdown Timer**: A timer to count down to a specific event or time.
-5. **Joke Generator**: Fetches and displays random jokes to entertain users.
-6. **Meme Generator**: Loads random memes from a public API.
+1. **📝 To-Do List**: A simple app that allows users to add, remove, and mark tasks as completed.
+2. **🌦️ Weather Report**: Displays the weather report of a specified location using an API.
+3. **🦠 Pokemon Generator**: Generates random Pokemon information using the Pokemon API.
+4. **⏳ Countdown Timer**: A timer to count down to a specific event or time.
+5. **😂 Joke Generator**: Fetches and displays random jokes to entertain users.
+6. **🤣 Meme Generator**: Loads random memes from a public API.
 
 ## Installation
 
@@ -46,11 +46,11 @@ To get a local copy up and running, follow these steps.
 ## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-1.Fork the project.
-2.Create your feature branch (git checkout -b feature/AmazingFeature).
-3.Commit your changes (git commit -m 'Add some AmazingFeature').
-4.Push to the branch (git push origin feature/AmazingFeature).
-5.Open a pull request.
+ 1.**Fork the project.**.
+ 2.**Create your feature branch (git checkout -b feature/AmazingFeature).**.
+ 3.**Commit your changes (git commit -m 'Add some AmazingFeature').**.
+ 4.**Push to the branch (git push origin feature/AmazingFeature).**.
+ 5.**Open a pull request.**.
 
  ## Contact
 Vinay Sandeep Dwarampudi - vinaysandeep782@gmail.com
