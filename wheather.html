@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GH-Wheather App </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />`
+</head>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+header {
+    background: #6c5ce7;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #74ebd5;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    color: #6c5ce7;
+    font-weight: bold;
+}
+
+main p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.side .input {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.side input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #6c5ce7;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    transition: border 0.3s ease;
+}
+
+.side input:focus {
+    border-color: #74ebd5;
+}
+
+.side button {
+    padding: 15px;
+    border: none;
+    background: #6c5ce7;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.side button:hover {
+    background: #74ebd5;
+    color: #fff;
+}
+
+.weatherValue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.weatherValue h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0 10px;
+}
+
+.weatherValue sup {
+    font-size: 1rem;
+    color: #6c5ce7;
+}
+
+.more {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #6c5ce7;
+}
+
+.right img {
+    margin-top: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #6c5ce7;
+    transition: color 0.3s ease;
+}
+
+.icons a:hover {
+    color: #74ebd5;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 20px 15px;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    .weatherValue h1 {
+        font-size: 2rem;
+    }
+
+    .more {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .side input {
+        font-size: 0.9rem;
+    }
+
+    .side button {
+        font-size: 0.9rem;
+    }
+
+    .weatherValue h1 {
+        font-size: 1.5rem;
+    }
+
+    main h1 {
+        font-size: 1.8rem;
+    }
+}
+</style>
+<body>
+        <div class="right side">
+            <div class="content">
+                <div class="first">
+                    <h3 class="cityname">City Name (peshawar) </h3>
+                    <img src="" alt="" id="img">
+                </div>
+                <div class="weatherValue">
+                    <h1>
+                        <span class="cen"></span>C <sup
+                            style="font-size:1.5rem;color:purple !important; margin-bottom: 10px;">o</sup>
+                    </h1>
+                    <h1>
+                        <span class="faren"></span>F <sup
+                            style="font-size:1.5rem;color:purple !important; margin-bottom: 10px;">o</sup>
+                    </h1>
+                </div>
+                <div class="more">
+                    <span>more info </span>
+                    <span>more info</span>
+                </div>
+            </div>
+            <div class="input">
+                <input type="text" id="input" placeholder="Type City Name ">
+                <button id="btn">Check Status </button>
+            </div>
+        </div>
+    </main>
+    <script>
+
+        let content = document.querySelector(".content"),
+            cityName = document.querySelector(".cityname"),
+            wheatherValue = document.querySelector(".weatherValue"),
+            spans = document.querySelectorAll(".more span"),
+            centegrade = document.querySelector(".cen"),
+            fer = document.querySelector(".faren"),
+            img = document.getElementById("img")
+
+
+
+        let input = document.getElementById("input"),
+            btn = document.getElementById("btn")
+
+        window.addEventListener("load", async e => {
+            let city = "Pehsawar"
+            api = `https://api.weatherapi.com/v1/current.json?key=12509c01201f4e909b065430232506%20&q=${city}&aqi=no`
+            // console.log(api)
+
+            const datafetch = await fetch(`https://api.weatherapi.com/v1/current.json?key=12509c01201f4e909b065430232506%20&q=Peshawar&aqi=no`)
+            const data = await datafetch.json()
+            // console.log(data);
+            cityName.innerHTML = data.location.name
+            centegrade.innerHTML = data.current.temp_c
+            fer.innerHTML = data.current.temp_f
+            img.src = data.current.condition.icon
+            spans[0].innerHTML = data.location.localtime
+            spans[1].innerHTML = data.location.country
+        })
+
+
+
+        btn.addEventListener("click", async e => {
+            if (input.value.length < 3) {
+                alert("please enter valid city name ")
+                input.value = " "
+            }
+
+            else {
+
+                const fetchdata = await fetch(`https://api.weatherapi.com/v1/current.json?key=12509c01201f4e909b065430232506%20&q=${input.value}&aqi=no`)
+
+                const data = await fetchdata.json();
+
+                // console.log(data)
+
+                cityName.innerHTML = data.location.name
+                centegrade.innerHTML = data.current.temp_c
+                fer.innerHTML = data.current.temp_f
+                img.src = data.current.condition.icon
+                spans[0].innerHTML = data.location.localtime
+                spans[1].innerHTML = data.location.country
+
+
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
